@@ -930,12 +930,12 @@ def sourcefilekey_processing(filerow):
                 break
         if isemptyvals:
             continue
-
+x
         if LOCAL_CONSOLE_OUTPUT1:
             print("temprow3[netorderttlloc]:" + str(temprow3[netorderttlloc]))
             print("temprow3[comfeesloc]:" + str(temprow3[comfeesloc]))
             print("temprow3[prodcostloc]:" + str(temprow3[prodcostloc]))
-            print("temprow3[shippingcostloc]:" + str(temprow3[shippingcostloc]))
+            print("temprxow3[shippingcostloc]:" + str(temprow3[shippingcostloc]))
 
         tempprofit = float(temprow3[netorderttlloc]) - abs(float(temprow3[comfeesloc])) - \
             abs(float(temprow3[prodcostloc])) - abs(float(temprow3[shippingcostloc]))
