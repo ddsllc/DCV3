@@ -12,9 +12,9 @@ import SourceFileKey_Ebay_Shipping
 RUN_MODE = 1  # 0= write each line and display combined's, 1= store lines, write all at once with integrated combined's
 CONSOLE_OUTPUT_SECTIONS_0 = False
 CONSOLE_OUTPUT_0 = False
-CONSOLE_OUTPUT_1 = False
+CONSOLE_OUTPUT_1 = True
 CONSOLE_OUTPUT_2 = False
-TESTING_RUN_LIMIT = 200  # Limit the number of loops for testing/review, -1=unlimited
+TESTING_RUN_LIMIT = -1  # Limit the number of loops for testing/review, -1=unlimited
 
 
 def processfile(t_mode, filesforprocessing, globkeyfile, sourceglobkeyfile, outputfiletype):
@@ -210,15 +210,21 @@ def processfile(t_mode, filesforprocessing, globkeyfile, sourceglobkeyfile, outp
         new_output_row_list = []
 
         keylength = filekey_1["getsourcefilekeylength"][0]()
+        basekeylength = filekey_1["getsourcefilekeybaselength"][0]()
 
         # check for blank first row
         print("check blanks: " + curheaderlist[0])
-        while curheaderlist is None or len(curheaderlist) == 0 or curheaderlist[0] == "":
+        # while curheaderlist is None or len(curheaderlist) == 0 or curheaderlist[0] == ""
+        while curheaderlist is None or len(curheaderlist) == 0 or curheaderlist[0] == "" or len(curheaderlist) < basekeylength:
             curheader = next(dcreader2)
             curheader = str(curheader).replace("\'", "")
             curheader = str(curheader).replace("[", "")
             curheader = str(curheader).replace("]", "")
             curheaderlist = str(curheader).split(", ")
+            if CONSOLE_OUTPUT_0:
+                print("len(curheaderlist): " + str(len(curheaderlist)))
+                print("basekeylength: " + str(basekeylength))
+                print("curheaderlist: " + str(curheaderlist))
 
 
 

@@ -4,14 +4,14 @@ import Helpers1
 
 
 filesToProcess = []
-filesToProcess.append("STX-Amazon-AO")
-outputfiletype = "STX"
+# filesToProcess.append("STX-Amazon-AO")
+# outputfiletype = "STX"
 # filesToProcess.append("SLN-Amazon-AO")
 # outputfiletype = "SLN"
 # filesToProcess.append("Veeqo-Orders-STX")
 # outputfiletype = "STX"
-# filesToProcess.append("SFE-Amazon-UTR")
-# outputfiletype = "SFE"
+filesToProcess.append("SFE-Amazon-UTR")
+outputfiletype = "SFE"
 
 
 # filesToProcess.append("ShipRush")  #ShipRush Shipments Report

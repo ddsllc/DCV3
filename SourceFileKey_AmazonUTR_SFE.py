@@ -88,7 +88,7 @@ def getsourcefilekeybaselength():
     for temprow in sourcefilekey1:
         # print(sourcefilekey1[temprow][2])
         if sourcefilekey1[temprow][2] == 1:
-            tempcount += tempcount
+            tempcount += 1
 
     return tempcount
 
@@ -198,6 +198,7 @@ def getcalcfieldvalues(casefieldname, newfilerow):
                 tempval = tempval.replace("\'", "")
                 tempval = tempval.replace("||", ",")
                 tempval = tempval.replace(" PST", "")  # Time zone is throwing errors for unknown f'ing reason
+                tempval = tempval.replace(" PDT", "")  # Time zone is throwing errors for unknown f'ing reason
                 # print(str(datetime.now().strftime("%m/%d/%Y %Z")))
 
                 # tempdate = datetime.strptime(tempval, "%b %d, %Y %I:%M:%S %p %Z")  # %b %d, %Y %I:%M:%S %p %Z

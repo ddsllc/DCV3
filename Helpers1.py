@@ -937,6 +937,9 @@ def secondaryagglookupvaluesfromfile_product(casefieldname, fieldslist, curfiler
                 continue
             templkuplistingidval1 = temprow[lkuplistingidloc]
             # print(temprow[lkuplistingidloc])
+            if LOCAL_CONSOLE_OUTPUT2:
+                print("templkuplistingidval1:" + str(templkuplistingidval1))
+                print("srclistingidval:" + str(srclistingidval))
             if templkuplistingidval1 != "" and srclistingidval != "" and templkuplistingidval1 == srclistingidval:
                 targetfound = True
                 templkupcostval1 = temprow[lkupcostloc]
